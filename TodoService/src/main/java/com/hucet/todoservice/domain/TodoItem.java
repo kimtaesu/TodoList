@@ -6,9 +6,6 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
-/**
- * Created by taesu on 2017-04-04.
- */
 @Data
 @ToString
 public class TodoItem implements Serializable {
