@@ -19,16 +19,18 @@ subprojects {
     [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
     dependencies {
         compile('org.projectlombok:lombok:1.16.6')
+        compile('joda-time:joda-time')
     }
     repositories {
         mavenLocal()
         mavenCentral()
+        maven { url "https://repo.spring.io/milestone" }
     }
-//	buildscript {
-//		dependencyManagement {
-//			imports {
-//				mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-//			}
-//		}
-//	}
+    buildscript {
+        dependencyManagement {
+            imports {
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            }
+        }
+    }
 }

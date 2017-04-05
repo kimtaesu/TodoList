@@ -1,3 +1,4 @@
 ext {
     springBootVersion = '1.5.2.RELEASE'
+    springCloudVersion = 'Dalston.RC1'
 }

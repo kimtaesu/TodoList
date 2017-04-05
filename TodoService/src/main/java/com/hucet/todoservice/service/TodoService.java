@@ -15,6 +15,7 @@ public class TodoService {
     TodoRepository todoRepository;
 
     public TodoEvent putTodo(TodoEvent dto) {
-        return todoRepository.save(dto);
+        todoRepository.save(dto);
+        return null;
     }
 }

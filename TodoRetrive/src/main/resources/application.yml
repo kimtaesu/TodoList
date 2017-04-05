@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: 8093
 logging.level.org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 spring:
@@ -15,12 +15,10 @@ spring:
 #          brokers: 192.168.99.100:9092
 #          zkNodes: 192.168.99.100:2181
       bindings:
-        output-event:
+        input-event:
           destination: event.notify
-          content-type: application/json
+          group: input.event.driven
           binder: rabbit1
-          producer:
-            requiredGroups: input.event.driven
       binders:
         rabbit1:
           type: rabbit
