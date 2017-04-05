@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoRetriveApplication {
+public class TodoQuerySideApplication {
     public static void main(String[] args) {
-        SpringApplication.run(TodoRetriveApplication.class, args);
+        SpringApplication.run(TodoQuerySideApplication.class, args);
     }
 }
