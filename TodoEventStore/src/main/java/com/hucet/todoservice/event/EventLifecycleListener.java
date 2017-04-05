@@ -1,7 +1,7 @@
 package com.hucet.todoservice.event;
 
 import com.hucet.todoservice.domain.TodoEvent;
-import com.hucet.todoservice.stream.TodoCommandStream;
+import com.hucet.todoservice.stream.TodoCommandCreate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
@@ -13,11 +13,11 @@ import org.springframework.stereotype.Component;
 public class EventLifecycleListener extends AbstractMongoEventListener<TodoEvent> {
 
     @Autowired
-    TodoCommandStream todoCommandStream;
+    TodoCommandCreate todoCommandCreate;
 
     @Override
     public void onAfterSave(AfterSaveEvent<TodoEvent> event) {
         super.onAfterSave(event);
-        todoCommandStream.notifyEvent(event.getSource());
+        todoCommandCreate.sendCreate(event.getSource());
     }
 }

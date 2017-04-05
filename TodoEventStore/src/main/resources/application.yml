@@ -17,12 +17,16 @@ spring:
 #          brokers: 192.168.99.100:9092
 #          zkNodes: 192.168.99.100:2181
       bindings:
-        output-todo-command:
-          destination: input.command
+        input-res-created:
+          destination: command.created
+          group:  todo.create.response
+          binder: rabbit1
+        output-req-create:
+          destination: command.create
           content-type: application/json
           binder: rabbit1
           producer:
-            requiredGroups: todo.command
+            requiredGroups: todo.create
       binders:
         rabbit1:
           type: rabbit

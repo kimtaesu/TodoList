@@ -1,6 +1,7 @@
 package com.hucet.todo.model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * Created by taesu on 2017-04-05.
