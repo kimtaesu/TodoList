@@ -1,5 +1,6 @@
 package com.hucet.todo.retrive.stream;
 
+import com.hucet.todo.retrive.stream.dto.EventModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
@@ -20,7 +21,7 @@ public class EventReceiver {
     }
 
     @StreamListener(EventSink.INPUT)
-    void eventReceive() {
-
+    void eventReceive(EventModel eventModel) {
+        log.info(eventModel.toString());
     }
 }
