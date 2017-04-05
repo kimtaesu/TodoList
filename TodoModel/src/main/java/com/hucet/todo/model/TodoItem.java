@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class TodoItem implements Serializable {
     private String title;
-    private String desc;
+    private String description;
 
     public String getTitle() {
         return title;
@@ -17,28 +17,28 @@ public class TodoItem implements Serializable {
         this.title = title;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public TodoItem() {
 
     }
 
-    public TodoItem(String title, String desc) {
+    public TodoItem(String title, String description) {
         this.title = title;
-        this.desc = desc;
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "TodoItem{" +
                 "title='" + title + '\'' +
-                ", desc='" + desc + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
