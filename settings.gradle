@@ -1,3 +1,5 @@
 rootProject.name = 'TodoList'
-include 'TodoService'
+include 'TodoEventStore'
 include 'TodoRetrive'
+include 'TodoCommandSide'
+include 'TodoModel'

@@ -1,0 +1,10 @@
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+//    compile('org.springframework.cloud:spring-cloud-starter-stream-kafka') {
+//        exclude group: 'org.apache.kafka', module: 'kafka_2.11'
+//    }
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile project(':TodoModel')
+}

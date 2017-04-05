@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8092
 logging.level.org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 spring:
@@ -7,6 +7,9 @@ spring:
     mongodb:
       host: 192.168.99.100
       port: 27017
+      database: test
+      password: test
+      username: test
   cloud:
     stream:
 #      kafka:
@@ -14,10 +17,12 @@ spring:
 #          brokers: 192.168.99.100:9092
 #          zkNodes: 192.168.99.100:2181
       bindings:
-        input-event:
-          destination: event.notify
-          group: input.event.driven
+        output-todo-command:
+          destination: input.command
+          content-type: application/json
           binder: rabbit1
+          producer:
+            requiredGroups: todo.command
       binders:
         rabbit1:
           type: rabbit
