@@ -1,8 +1,10 @@
 package com.hucet.todo.command.stream;
 
 
+import com.hucet.todo.command.service.TodoService;
 import com.hucet.todo.model.TodoItem;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
@@ -22,8 +24,11 @@ public class TodoCommandStream {
         SubscribableChannel input();
     }
 
+    @Autowired
+    TodoService todoService;
+
     @StreamListener(TodoCommandInput.INPUT)
     void onTodoCreated(TodoItem item) {
-        log.info(item.toString());
+        todoService.createTodo(item);
     }
 }
