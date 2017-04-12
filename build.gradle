@@ -5,14 +5,16 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
+
+
 subprojects {
+    apply plugin: 'kotlin'
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'org.springframework.boot'
-
-
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
@@ -20,6 +22,7 @@ subprojects {
     dependencies {
         compile('org.projectlombok:lombok:1.16.6')
         compile('joda-time:joda-time')
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
     }
     repositories {
         mavenLocal()

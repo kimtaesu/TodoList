@@ -1,0 +1,10 @@
+dependencies {
+    compile "com.typesafe.akka:akka-remote_2.12:${akkaVersion}"
+    compile "com.typesafe.akka:akka-actor_2.12:${akkaVersion}"
+    compile "com.typesafe.akka:akka-testkit_2.12:${akkaVersion}"
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile project(':TodoModel')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile fileTree(dir: 'libs', include: '*.jar')
+}

@@ -7,6 +7,7 @@ import java.util.UUID;
  * Created by taesu on 2017-04-05.
  */
 public class TodoItem implements Serializable {
+    private String uuid;
     private String title;
     private String description;
 
@@ -20,6 +21,14 @@ public class TodoItem implements Serializable {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public void setDescription(String description) {
@@ -38,7 +47,8 @@ public class TodoItem implements Serializable {
     @Override
     public String toString() {
         return "TodoItem{" +
-                "title='" + title + '\'' +
+                "uuid='" + uuid + '\'' +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

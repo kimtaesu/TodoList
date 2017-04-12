@@ -1,4 +1,7 @@
 ext {
     springBootVersion = '1.5.2.RELEASE'
     springCloudVersion = 'Dalston.RC1'
+    kotlinVersion = '1.1.1'
+    akkaVersion = '2.4.17'
+    scalaVersion = '2.12.1'
 }
